@@ -3,7 +3,8 @@ package main;
 import java.util.Locale;
 import java.util.Scanner;
 
-import devsuperior_geometric.Rectangle;
+import devsuperior.Employee;
+import devsuperior.Rectangle;
 
 public class Main {
 	
@@ -11,6 +12,33 @@ public class Main {
 		
 		Locale.setDefault(Locale.US); //colocar antes da instância da classe scanner
 		Scanner entry = new Scanner(System.in);	
+		
+		//Exercício 02 - Funcionário
+		Employee employee = new Employee();
+		System.out.print("Name: ");
+		String name = entry.nextLine();
+		employee.setName(name);
+		
+		System.out.print("Gross salary: ");
+		double grossSalary = entry.nextDouble();
+		employee.setGrossSalary(grossSalary);
+		
+		System.out.print("Tax: ");
+		double tax = entry.nextDouble();
+		employee.setTax(tax);
+		
+		System.out.println("");
+		System.out.printf("Employee: %s, $%.2f%n", employee.getName(), employee.netSalary());
+		
+		System.out.println("");
+		System.out.print("Which percentage to increase salary? ");
+		double increase = entry.nextDouble();
+		employee.increaseSalary(increase);
+		
+		System.out.println("");
+		System.out.printf("Updated data: %s, $%.2f", employee.getName(), employee.getGrossSalary());
+		
+		/*//Exercício 01 - Retângulo
 		Rectangle rectangle = new Rectangle();
 		
 		System.out.println("Enter rectangle width and height: ");
@@ -22,7 +50,8 @@ public class Main {
 		
 		System.out.printf("AREA = %.2f%n", rectangle.area());
 		System.out.printf("PERIMETER = %.2f%n", rectangle.perimeter());
-		System.out.printf("DIAGONAL = %.2f%n", rectangle.diagonal());
+		System.out.printf("DIAGONAL = %.2f%n", rectangle.diagonal());*/
+		
 		entry.close();
 	}
 

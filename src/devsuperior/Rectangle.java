@@ -1,4 +1,4 @@
-package devsuperior_geometric;
+package devsuperior;
 
 public class Rectangle {
 	
