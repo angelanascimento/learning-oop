@@ -1,10 +1,14 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import devsuperior.Employee;
-import devsuperior.Rectangle;
+import devsuperior.Student;
+
+//import devsuperior.Employee;
+//import devsuperior.Rectangle;
 
 public class Main {
 	
@@ -13,7 +17,25 @@ public class Main {
 		Locale.setDefault(Locale.US); //colocar antes da instância da classe scanner
 		Scanner entry = new Scanner(System.in);	
 		
-		//Exercício 02 - Funcionário
+		//Exercício 03 - Aluno
+		Student student = new Student();
+		List<Double> grades = new ArrayList<>();
+		
+	
+		student.setName(entry.nextLine());
+		
+		grades.add(entry.nextDouble());
+		
+		grades.add(entry.nextDouble());
+	
+		grades.add(entry.nextDouble());
+		
+		student.setGrades(grades);
+		System.out.printf("FINAL GRADE = %.2f%n", student.sumGrades());
+		System.out.println(student.checkStatus());
+		
+		
+		/*//Exercício 02 - Funcionário
 		Employee employee = new Employee();
 		System.out.print("Name: ");
 		String name = entry.nextLine();
@@ -36,7 +58,7 @@ public class Main {
 		employee.increaseSalary(increase);
 		
 		System.out.println("");
-		System.out.printf("Updated data: %s, $%.2f", employee.getName(), employee.getGrossSalary());
+		System.out.printf("Updated data: %s, $%.2f", employee.getName(), employee.getGrossSalary());*/
 		
 		/*//Exercício 01 - Retângulo
 		Rectangle rectangle = new Rectangle();
