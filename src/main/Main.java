@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import devsuperior.CurrencyConverter;
 import devsuperior.Student;
 
 //import devsuperior.Employee;
@@ -17,11 +18,24 @@ public class Main {
 		Locale.setDefault(Locale.US); //colocar antes da instância da classe scanner
 		Scanner entry = new Scanner(System.in);	
 		
-		//Exercício 03 - Aluno
+		
+		
+		//Exercício 04 - Conversor de moeda
+		CurrencyConverter currencyConverter = new CurrencyConverter();
+		
+		System.out.print("What is the dollar price? ");
+		currencyConverter.setDollarPrice(entry.nextDouble());
+		
+		System.out.print("How many dollars will be bought? ");
+		currencyConverter.setValueToBuy(entry.nextDouble());
+		
+		System.out.printf("Amount to be paid in reais = %.2f", currencyConverter.amountToPay());
+		
+		
+		/*//Exercício 03 - Aluno
 		Student student = new Student();
 		List<Double> grades = new ArrayList<>();
 		
-	
 		student.setName(entry.nextLine());
 		
 		grades.add(entry.nextDouble());
@@ -32,7 +46,7 @@ public class Main {
 		
 		student.setGrades(grades);
 		System.out.printf("FINAL GRADE = %.2f%n", student.sumGrades());
-		System.out.println(student.checkStatus());
+		System.out.println(student.checkStatus());*/
 		
 		
 		/*//Exercício 02 - Funcionário
