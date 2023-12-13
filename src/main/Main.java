@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import devsuperior.BankAccount;
 import devsuperior.CurrencyConverter;
 import devsuperior.Student;
 
@@ -19,8 +20,47 @@ public class Main {
 		Scanner entry = new Scanner(System.in);	
 		
 		
+		//Exercício 05 - Conta Bancária
 		
-		//Exercício 04 - Conversor de moeda
+		BankAccount bankAccount;
+		double deposit;
+		double withdraw;
+		
+		System.out.print("Enter account number: ");
+		int numberAccount = entry.nextInt();
+		
+		System.out.print("Enter account holder: ");
+		entry.nextLine();
+		String accountHolder = entry.nextLine();
+		
+		
+		System.out.print("Is there na initial deposit (y/n)? ");
+		String initialDeposit = entry.next().toLowerCase();
+		
+		if(initialDeposit.equals("y")) {
+			System.out.print("Enter initial deposit value: ");
+			deposit = entry.nextDouble();
+			bankAccount = new BankAccount(numberAccount, accountHolder, deposit);
+		}
+		else {
+			bankAccount = new BankAccount(numberAccount, accountHolder);
+		}
+		
+		System.out.printf("Account data: %n%s%n%n", bankAccount.toString());
+		
+		System.out.print("Enter a deposit value: ");
+		deposit = entry.nextDouble();
+		bankAccount.deposit(deposit);
+		System.out.printf("Update account data: %n%s%n%n", bankAccount.toString());
+		
+		System.out.printf("Enter a withdraw value: ");
+		withdraw = entry.nextDouble();
+		bankAccount.withdraw(withdraw);
+		System.out.printf("Update account data: %n%s%n", bankAccount.toString());
+		
+		
+		
+		/*//Exercício 04 - Conversor de Moedas
 		CurrencyConverter currencyConverter = new CurrencyConverter();
 		
 		System.out.print("What is the dollar price? ");
@@ -29,7 +69,7 @@ public class Main {
 		System.out.print("How many dollars will be bought? ");
 		currencyConverter.setValueToBuy(entry.nextDouble());
 		
-		System.out.printf("Amount to be paid in reais = %.2f", currencyConverter.amountToPay());
+		System.out.printf("Amount to be paid in reais = %.2f", currencyConverter.amountToPay());*/
 		
 		
 		/*//Exercício 03 - Aluno
