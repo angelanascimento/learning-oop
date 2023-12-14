@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import devsuperior.BankAccount;
+import devsuperior.CheckIn;
 import devsuperior.CurrencyConverter;
 import devsuperior.Student;
 
@@ -20,8 +21,38 @@ public class Main {
 		Scanner entry = new Scanner(System.in);	
 		
 		
-		//Exercício 05 - Conta Bancária
+		//Exercício 06 - Regitro de Aluguel
+		System.out.print("How many rooms will be rented? ");
+		int number = entry.nextInt();
 		
+		
+		CheckIn[] rentals = new CheckIn[10];
+	
+		for(int i = 1; i <= number; i++ ) {
+			
+			System.out.printf("%nRent #%d:%n", i);
+			System.out.print("Name: ");
+			entry.nextLine();
+			String name = entry.nextLine();
+			
+			System.out.print("E-mail: ");
+			String email = entry.nextLine();
+			
+			System.out.print("Room: ");
+			int room = entry.nextInt();
+				
+			rentals[room] = new CheckIn(name, email, room);
+		}
+		
+		System.out.printf("%nBusy rooms:%n");
+		for(int i = 0; i < rentals.length; i++) {
+			if(rentals[i] != null) {
+				System.out.println(rentals[i].toString());
+			}
+		}
+		
+		
+		/*//Exercício 05 - Conta Bancária
 		BankAccount bankAccount;
 		double deposit;
 		double withdraw;
@@ -57,7 +88,7 @@ public class Main {
 		withdraw = entry.nextDouble();
 		bankAccount.withdraw(withdraw);
 		System.out.printf("Update account data: %n%s%n", bankAccount.toString());
-		
+		*/
 		
 		
 		/*//Exercício 04 - Conversor de Moedas
