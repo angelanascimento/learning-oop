@@ -8,6 +8,7 @@ import java.util.Scanner;
 import devsuperior.BankAccount;
 import devsuperior.CheckIn;
 import devsuperior.CurrencyConverter;
+import devsuperior.EmployeeTwo;
 import devsuperior.Student;
 
 //import devsuperior.Employee;
@@ -21,7 +22,51 @@ public class Main {
 		Scanner entry = new Scanner(System.in);	
 		
 		
-		//Exercício 06 - Regitro de Aluguel
+		//Exercício 07 - Listas (Classe Funcionário 2)
+		
+		List<EmployeeTwo> employees = new ArrayList<>();
+		
+		System.out.print("How many employees will be registered? ");
+		int number = entry.nextInt();
+		
+		for(int i = 1; i <= number; i++) {
+			
+			System.out.printf("%nEmployee #%d%n", i);
+			System.out.printf("Id: ");
+			int id = entry.nextInt();
+			
+			System.out.print("Name: ");
+			entry.nextLine();
+			String name = entry.nextLine();
+			
+			System.out.print("Salary: ");
+			double salary = entry.nextDouble();
+			
+			employees.add(new EmployeeTwo(id, name, salary));
+			
+		}
+		
+		System.out.printf("%nEnter the employee id that will have salary increase: ");
+		int id = entry.nextInt();
+		
+		EmployeeTwo result = employees.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		
+		if(result != null) {
+			System.out.printf("Enter the percentage: ");
+			double percentage = entry.nextDouble();
+			result.increaseSalary(percentage);
+		}
+		else {
+			System.out.println("This id does not exist!");
+		}
+		
+		System.out.printf("%nList of Employees: %n");
+		for(EmployeeTwo x : employees) {
+			System.out.println(x);
+		}
+		
+	
+		/*//Exercício 06 - Regitro de Aluguel
 		System.out.print("How many rooms will be rented? ");
 		int number = entry.nextInt();
 		
@@ -50,7 +95,7 @@ public class Main {
 				System.out.println(rentals[i].toString());
 			}
 		}
-		
+		*/
 		
 		/*//Exercício 05 - Conta Bancária
 		BankAccount bankAccount;
