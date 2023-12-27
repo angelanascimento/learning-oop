@@ -22,7 +22,89 @@ public class Main {
 		Scanner entry = new Scanner(System.in);	
 		
 		
-		//Exercício 07 - Listas (Classe Funcionário 2)
+		
+		//Exercício de Matriz 02
+		int m = entry.nextInt();
+		int n = entry.nextInt();
+		int[][] matrix = new int[m][n];
+		
+		for(int i = 0; i < m; i++) {
+			for(int ii = 0; ii < n; ii++) {
+				
+				matrix[i][ii] = entry.nextInt();
+			}
+		}
+		
+		int x = entry.nextInt();
+		
+		for(int r = 0; r < m; r++) {
+			for(int c = 0; c < n; c++) {
+				
+				if(x == matrix[r][c]) {
+					
+					System.out.printf("Position : %d,%d %n", r, c);
+					
+					if(r == 0) {
+						System.out.printf("Left: %d %n", matrix[r][c-1]);
+						System.out.printf("Right: %d %n", matrix[r][c+1]);
+						System.out.printf("Down: %d %n", matrix[r+1][c]);
+					}
+					else if(r == (m -1)) {
+						System.out.printf("Up: %d %n", matrix[r-1][c]);
+						System.out.printf("Left: %d %n", matrix[r][c-1]);
+						System.out.printf("Right: %d %n", matrix[r][c+1]);
+					}
+					else if(c == 0) {
+						System.out.printf("Up: %d %n", matrix[r-1][c]);
+						System.out.printf("Right: %d %n", matrix[r][c+1]);
+						System.out.printf("Down: %d %n", matrix[r+1][c]);
+					}
+					else if(c == (n -1)) {
+						System.out.printf("Up: %d %n", matrix[r-1][c]);
+						System.out.printf("Left: %d %n", matrix[r][c-1]);
+						System.out.printf("Down: %d %n", matrix[r+1][c]);
+					}
+					else {
+						System.out.printf("Up: %d %n", matrix[r-1][c]);
+						System.out.printf("Left: %d %n", matrix[r][c-1]);
+						System.out.printf("Right: %d %n", matrix[r][c+1]);
+						System.out.printf("Down: %d %n", matrix[r+1][c]);
+					}
+				}
+			}
+		}
+		
+		
+		//Exercício de Matriz 01
+		/*
+		
+		int n= entry.nextInt();
+		int[][] matrix = new int[n][n];
+		int negative = 0;
+		int value;
+		
+		for(int ii = 0; ii < n; ii++) {
+			for(int i = 0; i < number; i++) {
+	
+				value = entry.nextInt();
+				matrix[ii][i] = value;
+				
+				if(value < 0) {
+					negative++;
+				}
+			}
+		}
+		
+		System.out.println("Main diagonal:");
+		for (int i = 0; i <n; i++) {
+			System.out.println(matrix[i][i] + " ")
+		}
+
+		System.out.printf("Negative numbers: %d", negative);*/
+		
+		
+		
+		/*//Exercício 07 - Listas (Classe Funcionário 2)
 		
 		List<EmployeeTwo> employees = new ArrayList<>();
 		
@@ -64,7 +146,7 @@ public class Main {
 		for(EmployeeTwo x : employees) {
 			System.out.println(x);
 		}
-		
+		*/
 	
 		/*//Exercício 06 - Regitro de Aluguel
 		System.out.print("How many rooms will be rented? ");
